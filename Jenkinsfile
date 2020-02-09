@@ -35,10 +35,5 @@ pipeline {
 	archiveArtifacts '/target/calculatorWeb.war'
 	//Send the email for build status.
    }
-   failure {
-   	//Send the email for build status.
-    }
     }
 }
-
-
