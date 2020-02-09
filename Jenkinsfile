@@ -21,7 +21,7 @@ pipeline {
             bat returnStatus: true, script: 'mvn -f ./pom.xml clean test && exit %ERRORLEVEL%'
                 }
            }}
-		   stage("Run Unit Teset Cases"){
+		   stage("Run Integration Teset Cases"){
      steps {
         script {
             bat returnStatus: true, script: 'mvn -f ./pom.xml clean integration-test && exit %ERRORLEVEL%'
