@@ -27,6 +27,13 @@ pipeline {
             bat returnStatus: true, script: 'mvn -f ./pom.xml clean integration-test && exit %ERRORLEVEL%'
                 }
            }}
+		   
+		   stage("Run Performance Teset Cases"){
+     steps {
+        script {
+            bat returnStatus: true, script: 'mvn -f ./pom.xml verify && exit %ERRORLEVEL%'
+                }
+           }}
     }
   
   post {
