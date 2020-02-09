@@ -28,7 +28,7 @@ pipeline {
                 }
            }}
     }
-  }
+  
   post {
    success{
    	//Collecting the required artifacts.
@@ -36,3 +36,4 @@ pipeline {
 	//Send the email for build status.
    }
     }
+	}
