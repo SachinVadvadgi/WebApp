@@ -32,7 +32,7 @@ pipeline {
   post {
    success{
    	//Collecting the required artifacts.
-	deploy adapters: [tomcat8(path: '', url: 'http://localhost:9090/')], contextPath: null, onFailure: false, war: 'target/calculatorWeb.war'
+	deploy adapters: [tomcat8(credentialsId: 'TomcatUseInfo', path: '', url: 'http://localhost:9090/')], contextPath: null, onFailure: false, war: 'target/calculatorWeb.war'
 	archiveArtifacts 'target/calculatorWeb.war'
 	//Send the email for build status.
    }
