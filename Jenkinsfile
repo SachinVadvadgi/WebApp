@@ -14,19 +14,19 @@ pipeline {
         script {
             bat returnStatus: true, script: 'mvn -f ./pom.xml clean package -Dmaven.test.skip=true && exit %ERRORLEVEL%'
                 }
-           }
+           }}
 		   stage("Run Unit Teset Cases"){
      steps {
         script {
             bat returnStatus: true, script: 'mvn -f ./pom.xml clean test && exit %ERRORLEVEL%'
                 }
-           }
+           }}
 		   stage("Run Unit Teset Cases"){
      steps {
         script {
             bat returnStatus: true, script: 'mvn -f ./pom.xml clean integration-test && exit %ERRORLEVEL%'
                 }
-           }
+           }}
     }
   }
   post {
@@ -36,5 +36,3 @@ pipeline {
 	//Send the email for build status.
    }
     }
-}
-}
