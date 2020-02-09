@@ -32,7 +32,7 @@ pipeline {
   post {
    success{
    	//Collecting the required artifacts.
-	archiveArtifacts '/target/calculatorWeb.war'
+	archiveArtifacts 'target/calculatorWeb.war'
 	//Send the email for build status.
    }
     }
