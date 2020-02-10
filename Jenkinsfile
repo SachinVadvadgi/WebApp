@@ -28,20 +28,20 @@ pipeline {
                 }
            }}
 		   
-		   //stage("Run Performance Teset Cases"){
-     //steps {
-       // script {
-         //   bat returnStatus: true, script: 'mvn -f ./pom.xml verify && exit %ERRORLEVEL%'
-			//bat returnStatus: true, script: 'mvn -f ./pom.xml surefire-report:report && exit %ERRORLEVEL%'
-              //  }
-           //}}
+		   stage("Run Performance Teset Cases"){
+     steps {
+        script {
+            bat returnStatus: true, script: 'mvn -f ./pom.xml verify && exit %ERRORLEVEL%'
+			bat returnStatus: true, script: 'mvn -f ./pom.xml surefire-report:report && exit %ERRORLEVEL%'
+               }
+           }}
     }
   
   post {
    success{
    	//Collecting the required artifacts.
-	deploy adapters: [tomcat8(credentialsId: 'TomcatUseInfo', path: '', url: 'http://localhost:9090/')], contextPath: null, onFailure: false, war: 'target/calculatorWeb.war'
-	archiveArtifacts 'target/calculatorWeb.war,target/site/surefire-report.html'
+	deploy adapters: [tomcat8(credentialsId: 'TomcatUseInfo', path: '', url: 'http://localhost:9090/')], contextPath: null, onFailure: false, war: 'target/calculator.war'
+	archiveArtifacts 'target/calculator.war,target/site/cobertura/**/*.*,target/site/surefire-report.html'
 	//Send the email for build status.
    }
     }
