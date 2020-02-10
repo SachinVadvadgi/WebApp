@@ -28,13 +28,13 @@ pipeline {
                 }
            }}
 		   
-		   stage("Run Performance Teset Cases"){
-     steps {
-        script {
-            bat returnStatus: true, script: 'mvn -f ./pom.xml verify && exit %ERRORLEVEL%'
-			bat returnStatus: true, script: 'mvn -f ./pom.xml surefire-report:report && exit %ERRORLEVEL%'
-                }
-           }}
+		   //stage("Run Performance Teset Cases"){
+     //steps {
+       // script {
+         //   bat returnStatus: true, script: 'mvn -f ./pom.xml verify && exit %ERRORLEVEL%'
+			//bat returnStatus: true, script: 'mvn -f ./pom.xml surefire-report:report && exit %ERRORLEVEL%'
+              //  }
+           //}}
     }
   
   post {
