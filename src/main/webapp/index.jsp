@@ -7,6 +7,6 @@
         <title>JSP - Hello World</title>
     </head>
     <body>
-        <%="Hello,JSP!" %>
+        <%="Welcome to Java Maven Calculator Web App!!!\n" + new Date().toString() %>
     </body>
 </html>
