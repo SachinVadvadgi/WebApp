@@ -15,20 +15,20 @@ pipeline {
             bat returnStatus: true, script: 'mvn -f ./pom.xml clean package -Dmaven.test.skip=true && exit %ERRORLEVEL%'
                 }
            }}
-		   stage("Run Unit Teset Cases"){
+		   stage("Run Unit Test Cases"){
      steps {
         script {
             bat returnStatus: true, script: 'mvn -f ./pom.xml clean test && exit %ERRORLEVEL%'
                 }
            }}
-		   stage("Run Integration Teset Cases"){
+		   stage("Run Integration Test Cases"){
      steps {
         script {
             bat returnStatus: true, script: 'mvn -f ./pom.xml clean integration-test && exit %ERRORLEVEL%'
                 }
            }}
 		   
-		   stage("Run Performance Teset Cases"){
+		   stage("Run Performance Test Cases"){
      steps {
         script {
             bat returnStatus: true, script: 'mvn -f ./pom.xml verify && exit %ERRORLEVEL%'
