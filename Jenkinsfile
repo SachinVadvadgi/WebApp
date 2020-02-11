@@ -9,7 +9,7 @@ pipeline {
 	  buildDiscarder(logRotator(numToKeepStr: '5', daysToKeepStr: '5'))}
    
    stages {
-	   stage("Build WebCalcAppi project"){
+	   stage("Build WebCalcApi project"){
      steps {
         script {
             bat returnStatus: true, script: 'mvn -f ./pom.xml clean package -Dmaven.test.skip=true && exit %ERRORLEVEL%'
