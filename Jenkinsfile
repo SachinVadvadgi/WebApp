@@ -41,7 +41,7 @@ pipeline {
    success{
    	//Collecting the required artifacts.
 	deploy adapters: [tomcat8(credentialsId: 'TomcatUseInfo', path: '', url: 'http://localhost:9090/')], contextPath: null, onFailure: false, war: 'target/calculator.war'
-	archiveArtifacts 'target/calculator.war,target/site/cobertura/**/*.*,target/site/surefire-report.html'
+	archiveArtifacts 'target/calculator.war,target/jmeter/reports/**/*.*,target/site/cobertura/**/*.*,target/site/surefire-report.html'
 	//Send the email for build status.
    }
     }
